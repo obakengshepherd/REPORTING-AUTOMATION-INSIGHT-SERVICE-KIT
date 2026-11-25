@@ -75,3 +75,12 @@ The project is not an enterprise BI platform, large-scale cloud data platform or
 ## 10. Acceptance direction
 
 A completed demonstration should be understandable and reproducible by another technically competent person using the repository documentation. Implementation, verification and Product Owner acceptance are separate states.
+
+## 11. Product Owner acceptance
+
+**Accepted:** 25 November 2026  
+**Acceptance statement:** The Product Owner accepted the Reporting foundation documentation as the baseline for implementation.
+
+This acceptance establishes the documented project purpose, scope, modular architecture, approved toolkit, six service categories, delivery methodology, data standards, quality assurance framework and phased roadmap as the authoritative baseline.
+
+Acceptance does not represent implementation, verification of service functionality, production readiness or commercial validation. Material changes to approved requirements, architecture, technology stack, security boundaries or data integrity rules require Product Owner approval.
