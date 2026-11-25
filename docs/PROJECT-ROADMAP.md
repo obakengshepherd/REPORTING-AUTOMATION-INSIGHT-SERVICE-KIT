@@ -1,7 +1,7 @@
 # Project Roadmap
 
 **Foundation approved:** 25 November 2026  
-**Current status:** Repository foundation setup. Substantial implementation has not started.
+**Current status:** Phase 0 foundation accepted. Phase 1 implementation has not started.
 
 ## Phase 0 — Foundation and repository setup
 - Record approved purpose, scope, architecture and toolkit.
@@ -9,9 +9,11 @@
 - Establish repository conventions and initial backlog.
 - Inspect and verify the initial repository state.
 
-**Exit:** Foundation documentation exists in the authoritative repository and repository setup is reviewed.
+**Exit:** Product Owner acceptance recorded on 25 November 2026. Foundation documentation exists in the authoritative repository and repository setup has been inspected.
 
 ## Phase 1 — Spreadsheet Cleaning & Restructuring
+
+**Status:** NOT STARTED. Begin only through an explicitly scoped implementation task.
 - Select a synthetic or appropriately licensed dataset.
 - Profile and document its source structure.
 - Implement controlled cleaning and restructuring.
