@@ -4,7 +4,7 @@
 
 ## Project status
 
-**Foundation approved — 25 November 2026.** Repository documentation setup is in progress. Substantial implementation has not started.
+**Foundation accepted — 25 November 2026. Phase 1 — Spreadsheet Cleaning & Restructuring — not started.** Repository documentation establishes the approved baseline; substantial service implementation has not started.
 
 ## Purpose
 
@@ -58,4 +58,4 @@ Use synthetic or appropriately licensed public datasets for demonstrations. Do n
 
 ## Current boundary
 
-This repository setup establishes the approved project foundation and working documentation. It does not authorise substantial service implementation. Implementation begins only through the agreed phased roadmap and subsequent task direction.
+The Product Owner accepted the foundation documentation on 25 November 2026. Phase 0 is complete. Phase 1, Spreadsheet Cleaning & Restructuring, has not started and must begin through an explicitly scoped implementation task. The README and roadmap are status summaries; the roadmap controls phase sequencing and exit criteria.
