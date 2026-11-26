@@ -69,7 +69,7 @@ All six are approved. This does not authorise simultaneous implementation of all
 - **Assigned AI:** Claude — Specialist AI.
 - **Status:** PREPARED / AWAITING CLAUDE REVIEW.
 - **Branch:** Not applicable; review-only assignments do not create branches.
-- **Base reference:** `main` at `2d732d7f28409e06e23d49e73b7ee2e1a0a7ce4c` (the latest main commit inspected before this handoff documentation update).
+- **Base reference:** `main` at `dd4b127b2fc1d1a4d0ae0af39e9a74024baf6229` (latest main commit after collaboration documentation setup).
 - **Files owned by Claude:** None.
 - **Files excluded:** All repository files; no edits or commits are authorised for this review.
 - **Files ChatGPT maintains:** `docs/AI-HANDOFF.md` and routine coordination documentation.
