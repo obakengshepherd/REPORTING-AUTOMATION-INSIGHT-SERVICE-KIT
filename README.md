@@ -51,6 +51,8 @@ Every service should define its business requirement, scope, source data, transf
 - `docs/DATA-QUALITY-STANDARDS.md` — validation, quality classification and handling principles
 - `docs/QUALITY-ASSURANCE.md` — verification and acceptance controls
 - `docs/PROJECT-ROADMAP.md` — phased implementation and exit criteria
+- `docs/AI-COLLABORATION.md` — AI roles, change control, branch and pull-request rules
+- `docs/AI-HANDOFF.md` — current status, assignments, ownership and next authorised action
 
 ## Data and commercial integrity
 
