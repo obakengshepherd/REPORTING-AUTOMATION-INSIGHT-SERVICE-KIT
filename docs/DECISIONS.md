@@ -48,14 +48,20 @@ This register records material project decisions and their approval status. Reco
 | DEC-025 | Phase 1 repository approach | Use a service-specific directory; no speculative shared library; final exact paths confirmed in implementation task assignment | Product Owner approval, 27 Nov 2026 |
 | DEC-026 | Phase 1 reconciliation | Every source candidate receives exactly one final disposition; counts and relevant control totals must reconcile with no unexplained differences | Product Owner approval, 27 Nov 2026 |
 
-## Pending decisions and approvals
+## Phase 1 implementation decisions — approved 27 November 2026
 
-| ID | Topic | Status |
-|---|---|---|
-| PENDING-001 | Final Phase 1 field schema, data dictionary and control-total formulas | To be completed in the final specification/task design |
-| PENDING-002 | Exact seeded issue rows, structural artefacts and expected outcomes | To be defined in the deterministic seeded-issue manifest before implementation |
-| PENDING-003 | Exact repository paths, dependency versions and file-level code assignment | To be finalised in the implementation assignment |
-| PENDING-004 | Final approval of the completed Phase 1 specification for implementation | Not yet granted |
+| ID | Decision | Approved position | Approval / source |
+|---|---|---|---|
+| DEC-027 | Source schema | Fixed 11-field order-line schema and constraints in PHASE-1-SPECIFICATION.md | Product Owner implementation-scope approval, 27 Nov 2026 |
+| DEC-028 | Synthetic data | 1,500 base records; one Orders worksheet; seed 20261127; deterministic generator and synthetic identifiers | Product Owner implementation-scope approval, 27 Nov 2026 |
+| DEC-029 | Financial controls | ZAR only; Decimal; per-line ROUND_HALF_UP; canonical formula Quantity × UnitPrice × (1 − DiscountRate); no tax, shipping or FX | Product Owner implementation-scope approval, 27 Nov 2026 |
+| DEC-030 | Seeded ground truth | manifests/seeded-issues.json with stable value, duplicate, ambiguity and structural cases | Product Owner implementation-scope approval, 27 Nov 2026 |
+| DEC-031 | Runtime baseline | Python 3.11/3.12, pandas 2.2.3, openpyxl 3.1.5, pytest 8.3.4 | Product Owner implementation-scope approval, 27 Nov 2026 |
+| DEC-032 | First engineering increment | RASK-P1-I1: generator, manifest, cleaner, artefact contracts, XLSX/CSV, reconciliation and tests within bounded handoff | Product Owner implementation-scope approval, 27 Nov 2026 |
+
+## Open engineering choices (delegated within approved scope)
+
+Routine module internals, CLI argument names, logging format and test organisation are delegated within the approved architecture. No outstanding Product Owner decision blocks RASK-P1-I1. Material changes to scope, stack, data integrity, security or major dependencies still require approval.
 
 ## Change control
 
