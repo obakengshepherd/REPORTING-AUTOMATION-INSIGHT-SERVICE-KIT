@@ -4,7 +4,7 @@
 
 Establish a consistent, safe and documented process for receiving and assessing data before transformation or reporting.
 
-## Intake checklist
+## General intake checklist
 
 1. **Source:** Identify origin, owner, extraction date and provenance where known.
 2. **Permission:** Confirm authority to use the data for the stated purpose.
@@ -18,6 +18,22 @@ Establish a consistent, safe and documented process for receiving and assessing 
 10. **Sensitivity:** Identify personal, confidential, financial or otherwise restricted information.
 11. **Suitability:** Decide whether the dataset can support the requested reporting question.
 
+## Spreadsheet-specific intake checklist
+
+For spreadsheet-centred services, additionally record:
+- Workbook filename, file type, size and SHA-256 fingerprint.
+- Sheet names, hidden sheets and relevant workbook structure.
+- Header row locations and duplicate/blank/merged header concerns.
+- Title rows, blank separators, repeated headers, footers and embedded subtotals/totals.
+- Formula cells, hard-coded values, merged cells, filters, hidden rows/columns and formatting-dependent values where relevant.
+- Expected record grain and candidate key.
+- Original worksheet row position for source lineage.
+- Locale-sensitive date, decimal and thousands separators.
+- Currency, units, time zone and reporting-period assumptions.
+- Whether structural artefacts can be distinguished from genuine business records.
+
+Do not remove a row solely because it is blank, repeated or formatted differently. Classify it using explicit rules and retain its source location in the intake/profile or reconciliation evidence.
+
 ## Intake record
 
 For each demonstration or engagement, record:
@@ -29,6 +45,7 @@ For each demonstration or engagement, record:
 - Sensitivity classification and handling requirements.
 - Known limitations and assumptions.
 - Intake decision and reviewer/date.
+- For reproducible file-based runs, source fingerprint and run identifier.
 
 ## Handling rules
 
@@ -39,6 +56,8 @@ For each demonstration or engagement, record:
 - Use synthetic or appropriately licensed public data in public demonstrations.
 - Restrict access and retention according to the data owner's requirements.
 - Do not infer missing business values or silently discard records.
+- Keep source-row references when transforming, filtering, quarantining or excluding records.
+- Record transformations and exclusions in a traceable register.
 
 ## Intake outcomes
 

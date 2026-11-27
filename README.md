@@ -4,7 +4,7 @@
 
 ## Project status
 
-**Foundation accepted — 25 November 2026. Phase 1 — Spreadsheet Cleaning & Restructuring — not started.** Repository documentation establishes the approved baseline; substantial service implementation has not started.
+**Foundation accepted — 25 November 2026. Phase 1 specification refinement in progress; implementation has not started.** The Phase 1 architecture-review recommendations have been approved and are being incorporated into the specification. The completed task still requires explicit Product Owner approval before implementation.
 
 ## Purpose
 
@@ -34,7 +34,7 @@ All six service categories are in the approved demonstration scope and will be i
 - Git and GitHub
 - Supporting local automation techniques when justified
 
-Tools are selected per workflow. The project will not introduce infrastructure or dependencies without a demonstrated requirement.
+Phase 1 uses Python/pandas and pytest for its processing and test workflow, with XLSX and CSV deliverables. Power Query is deferred for this phase; the wider project toolkit remains unchanged.
 
 ## Delivery lifecycle
 
@@ -52,7 +52,7 @@ Every service should define its business requirement, scope, source data, transf
 - `docs/QUALITY-ASSURANCE.md` — verification and acceptance controls
 - `docs/PROJECT-ROADMAP.md` — phased implementation, FNEOS gates and exit criteria
 - `docs/DECISIONS.md` — material approved decisions and change control
-- `docs/PHASE-1-SPECIFICATION.md` — draft Phase 1 scope and proposed acceptance criteria; not approved for implementation
+- `docs/PHASE-1-SPECIFICATION.md` — Phase 1 design direction and final implementation approval gate
 - `docs/AI-COLLABORATION.md` — FNEOS roles, file ownership and three-stage workflow
 - `docs/AI-HANDOFF.md` — current status, assignments, ownership and next authorised action
 
@@ -62,4 +62,4 @@ Use synthetic or appropriately licensed public datasets for demonstrations. Do n
 
 ## Current boundary
 
-The Product Owner accepted the foundation documentation on 25 November 2026. Phase 0 is complete. Phase 1, Spreadsheet Cleaning & Restructuring, has not started. Its specification is currently a draft and does not authorise implementation. Work begins only after the Product Owner approves a bounded task and the required implementation assignment is issued. The README and roadmap are status summaries; the roadmap controls phase sequencing and exit criteria.
+The Product Owner accepted the foundation documentation on 25 November 2026. Phase 0 is complete. The Product Owner has approved Claude's Phase 1 architecture-review recommendations, and the detailed Phase 1 specification is being refined. Phase 1 implementation remains NOT STARTED and is not authorised until the Product Owner explicitly approves the completed task specification. No Claude code assignment is active.

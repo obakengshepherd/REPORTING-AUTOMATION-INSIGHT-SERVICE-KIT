@@ -2,7 +2,7 @@
 
 **Foundation approved:** 25 November 2026  
 **Governance standard:** FNEOS v1.0 — adopted 27 November 2026  
-**Current status:** Phase 0 foundation accepted. Phase 1 implementation has not started.
+**Current status:** Phase 0 foundation accepted. Phase 1 specification refinement in progress; implementation not started.
 
 ## FNEOS delivery gates
 
@@ -36,25 +36,32 @@ Material changes to approved requirements, scope, architecture, stack, security,
 
 ## Phase 1 — Spreadsheet Cleaning & Restructuring
 
-**Status:** NOT STARTED.  
-**Specification:** `docs/PHASE-1-SPECIFICATION.md` — DRAFT, NOT APPROVED FOR IMPLEMENTATION.
+**Status:** SPECIFICATION REFINEMENT IN PROGRESS; IMPLEMENTATION NOT STARTED.  
+**Architecture review:** `RASK-ARCH-REV-001` recommendations approved by Product Owner.  
+**Specification:** `docs/PHASE-1-SPECIFICATION.md` — refined draft; final implementation approval pending.
 
-Proposed work:
-- Select and approve a synthetic or appropriately licensed dataset.
-- Confirm scenario, row grain, candidate key and control totals.
-- Agree cleaning, exception and reconciliation rules.
-- Profile and document source structure.
-- Implement controlled cleaning and restructuring only after task approval.
-- Produce a reusable output, issue/exception evidence and handover guide.
+Approved design direction:
+- Python/pandas processing with pytest.
+- XLSX human-facing and CSV machine-readable outputs.
+- Synthetic small-business sales/orders data, one order line per row, `OrderLineID` candidate key, fixed-seed generator.
+- Seeded value-level and structural issues, exact and near-duplicate cases and an ambiguity case.
+- Explicit severity/disposition taxonomy, source-row lineage and reconciliation.
+- File-level artefact contracts; service-specific layout; no shared framework or library.
 
-**Pre-build gate:** Product Owner approves the final bounded Phase 1 specification, dataset and unresolved business rules. ChatGPT then issues a separate explicit Claude code assignment.
+Remaining specification work:
+- Finalise exact field schema and data dictionary.
+- Define control-total formulas, currency and rounding rules.
+- Define seeded-issue manifest and expected outcomes.
+- Confirm exact repository paths and file-level task scope.
 
-**Exit:** Reproducible workflow with documented transformations, traceable exceptions and verified results. Product Owner acceptance is recorded separately.
+**Pre-build gate:** ChatGPT presents the completed specification and bounded task scope for explicit Product Owner approval. Only after approval may ChatGPT issue a separate Claude implementation assignment.
+
+**Exit:** Reproducible workflow with documented transformations, traceable exceptions, complete source disposition, reconciled control totals, automated tests and Product Owner acceptance recorded separately.
 
 ## Phase 2 — Data Quality Assessment
 
-- Define quality dimensions and business rules.
-- Implement profiling and validation checks.
+- Extend quality profiling and validation capabilities using proven Phase 1 concepts where justified.
+- Define broader quality dimensions and business rules.
 - Produce issue register and quality report.
 
 **Exit:** Validation outcomes and exception handling are evidenced.
