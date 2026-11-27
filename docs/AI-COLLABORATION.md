@@ -60,14 +60,15 @@ Claude may read all repository documentation. Reading does not grant authority t
 5. Prepare a bounded Claude assignment with explicit code-file ownership.
 6. Obtain Product Owner approval where required.
 
-### Stage 2 — Claude: Engineering and code
-1. Review the approved architecture and assignment.
-2. Identify risks or omissions before implementation.
-3. Implement only the assigned code files.
-4. Return complete code files in chat, using exact repository-relative paths.
-5. Explain technical decisions and dependencies.
-6. Supply tests and exact execution instructions.
-7. Report actual test outcomes only when tests were executed; otherwise label them NOT RUN.
+### Stage 2 — Claude: One review, then engineering
+1. Independently review the approved handoff once for material architecture, technical, security, data-integrity and implementation risks.
+2. Classify findings as BLOCKING, NON-BLOCKING or PRODUCT OWNER DECISION.
+3. If no genuine blocker exists, proceed immediately with implementation under the same handoff. Do not reopen settled decisions or repeat general reviews.
+4. Document non-blocking observations and continue within the approved design.
+5. Stop only affected work for a genuine blocker; submit one consolidated report with issue, impact and recommended resolution.
+6. Implement only assigned code files; return complete files with exact paths.
+7. Explain decisions and dependencies; supply VS Code assembly instructions, tests, commands and expected outcomes.
+8. Report actual test outcomes only if executed; otherwise label NOT RUN.
 
 ### Stage 3 — User, VS Code and ChatGPT: Assembly and integration
 1. User places Claude's returned files into the local VS Code workspace.
@@ -157,14 +158,17 @@ Use existing authoritative project documents. Avoid duplicate architecture, road
 ## 10. Required assignment contents
 
 Every Claude implementation assignment must state:
-- Task identifier and objective.
-- Approved requirements and architecture references.
-- Exact files Claude may create or modify.
-- Explicitly excluded files and scope.
-- Input/output contracts and relevant data rules.
+- Task ID and phase/increment.
+- Latest verified main SHA.
+- Approved architecture, requirements and decision references.
+- Exact objective and scope.
+- Exact allowed files and excluded files/areas.
+- Input/output contracts and data rules.
 - Dependencies and environment assumptions.
-- Required tests and acceptance criteria.
-- Required return format and execution instructions.
-- Material decisions that require escalation.
+- Expected behaviour and acceptance criteria.
+- Required tests, commands and expected outcomes.
+- Complete-file return format.
+- VS Code assembly and local verification instructions.
+- Known risks, stop conditions and decisions requiring escalation.
 
 No substantial implementation begins before the assignment and required Product Owner approvals are in place.
