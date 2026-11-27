@@ -1,47 +1,52 @@
-# AI Handoff & Project Coordination
+# FNEOS Project Handoff & Coordination
 
-**Maintainer:** ChatGPT — Primary AI  
+**Project:** Reporting Automation & Insight Service Kit  
+**Primary AI:** ChatGPT — architecture, documentation and integration owner  
+**Specialist AI:** Claude — assigned engineering and code owner  
 **Authority:** Product Owner  
-**Last updated:** 26 November 2026  
-**Current branch:** `main`
+**Historical cutoff:** 25 November 2026  
+**Reset recorded:** 27 November 2026
 
-## 1. Current project status
+## 1. Historical baseline
 
-**Foundation:** ACCEPTED by the Product Owner on 25 November 2026.  
-**Phase 0 — Foundation and repository setup:** Complete; accepted baseline is recorded in `docs/PROJECT-FOUNDATION.md`.  
-**Phase 1 — Spreadsheet Cleaning & Restructuring:** NOT STARTED.  
-**Current activity:** Phase 1 methodology and dataset-readiness review assigned to Claude as REVIEW ONLY.  
-**Implementation:** No substantial service implementation has begun.
+The authoritative accepted project baseline is commit:
 
-The accepted project configuration remains:
-- Modular, workflow-oriented, local-first architecture.
-- Approved toolkit: Excel/Power Query, SQL Server 2022/T-SQL, Python/pandas where justified, Power BI, Git/GitHub and justified local automation.
-- Six approved service categories, delivered progressively.
-- Synthetic or appropriately licensed public data for demonstrations; no confidential/client data in the public repository.
+`c9f1ae085f48521f954af7173918be523282108e`
 
-## 2. Authoritative baseline
+This baseline records:
+- Phase 0 foundation accepted.
+- Phase 1 — Spreadsheet Cleaning & Restructuring — NOT STARTED.
+- Substantial service implementation NOT STARTED.
+- Modular, workflow-oriented, local-first toolkit.
+- Six approved service categories.
+- Excel/Power Query, SQL Server 2022/T-SQL, Python/pandas where justified, Power BI and Git/GitHub.
+- Data intake, data quality, QA, commercial integrity and synthetic/public-safe data requirements.
+
+The reset preserves valid requirements and historical commits. It supersedes conflicting collaboration arrangements and handoffs introduced on 26 November 2026. No history rewrite or force-push is authorised.
+
+## 2. Repository state at reset
 
 Repository: https://github.com/obakengshepherd/REPORTING-AUTOMATION-INSIGHT-SERVICE-KIT  
 Default branch: `main`  
-Latest inspected main commit at this handoff update: `2d732d7f28409e06e23d49e73b7ee2e1a0a7ce4c`  
-Latest commit message: `docs(reporting): align README with accepted foundation status`
+Latest inspected main before corrective commits: `fbf5d0807ea3a89a785deb78a5e1e856b34af7cd`
 
-The latest commit updates README status to reflect accepted foundation and Phase 1 not started. It is preserved.
+The inspected 26 November history included:
+- `2d732d7` — README status alignment; preserve its valid status correction.
+- `3f4ab9f` — AI collaboration agreement; superseded by FNEOS.
+- `76feaee` — prior handoff and Phase 1 review assignment; superseded.
+- `dd4b127` — README links to AI documents; retain and align links.
+- `fbf5d08` — prior handoff baseline correction; superseded by this handoff.
 
-Relevant accepted documents:
-- `README.md`
-- `docs/PROJECT-FOUNDATION.md`
-- `docs/PROJECT-ROADMAP.md`
-- `docs/SERVICE-CATALOGUE.md`
-- `docs/SERVICE-DELIVERY-METHODOLOGY.md`
-- `docs/DATA-INTAKE-STANDARDS.md`
-- `docs/DATA-QUALITY-STANDARDS.md`
-- `docs/QUALITY-ASSURANCE.md`
+The accepted foundation and standards documents remain authoritative and are not being reopened.
 
-No pre-existing `docs/AI-COLLABORATION.md` or `docs/AI-HANDOFF.md` was present on the inspected `main`; these documents establish the missing collaboration controls and live handoff record.
+## 3. Current project status
 
-## 3. Approved service catalogue
+**Phase 0 — Foundation and repository setup:** ACCEPTED by Product Owner on 25 November 2026.  
+**Phase 1 — Spreadsheet Cleaning & Restructuring:** NOT STARTED.  
+**Substantial implementation:** NOT STARTED.  
+**Current activity:** FNEOS governance reset and documentation synchronisation.
 
+The six approved services remain:
 1. Spreadsheet Cleaning & Restructuring.
 2. Data Quality Assessment.
 3. SQL Reporting & Data Extraction.
@@ -49,88 +54,67 @@ No pre-existing `docs/AI-COLLABORATION.md` or `docs/AI-HANDOFF.md` was present o
 5. Dashboard Development.
 6. Small-scale Business Analytics.
 
-All six are approved. This does not authorise simultaneous implementation of all six.
+All six are approved for progressive demonstration; they are not to be implemented simultaneously.
 
-## 4. Completed work
+## 4. FNEOS workflow and ownership
 
-- Product Owner approved modular architecture, recommended toolkit and six-service demonstration scope.
-- Product Owner accepted the foundation documentation on 25 November 2026.
-- Foundation acceptance was recorded in `docs/PROJECT-FOUNDATION.md`.
-- Roadmap was updated to mark Phase 0 accepted and Phase 1 NOT STARTED.
-- README status was corrected on main and is preserved.
-- Latest main, repository metadata, root/docs listings, relevant project documentation, recent commit history and pull-request listing were inspected for collaboration initialisation.
-- No open pull requests were returned by the inspected repository pull-request listing.
+### Stage 1 — ChatGPT
+Owns architecture, requirements, technical specifications, README and all documentation, decision register, task specifications, Claude assignment preparation, main governance and final integration.
 
-## 5. Active assignment register
+### Stage 2 — Claude
+Reviews architecture by default and implements only explicitly assigned code files. Returns complete files in chat with exact repository-relative paths, engineering explanations, tests and execution instructions.
 
-### PH1-REVIEW-001 — Phase 1 methodology and dataset readiness
+Claude has no default permission to push, commit, merge, create branches or modify documentation. Branch-based work requires explicit Product Owner authorisation.
 
-- **Classification:** REVIEW AND RECOMMEND (review-only; no file modification authorised).
-- **Assigned AI:** Claude — Specialist AI.
-- **Status:** PREPARED / AWAITING CLAUDE REVIEW.
-- **Branch:** Not applicable; review-only assignments do not create branches.
-- **Base reference:** `main` at `dd4b127b2fc1d1a4d0ae0af39e9a74024baf6229` (latest main commit after collaboration documentation setup).
-- **Files owned by Claude:** None.
-- **Files excluded:** All repository files; no edits or commits are authorised for this review.
-- **Files ChatGPT maintains:** `docs/AI-HANDOFF.md` and routine coordination documentation.
-- **Expected deliverable:** Written technical review and recommendation for a suitable synthetic/public dataset profile, Phase 1 cleaning methodology, rules, validation and reconciliation approach, tool selection and bounded implementation scope.
-- **Verification:** Review must be reasoned against the accepted repository standards; distinguish requirements from recommendations and identify assumptions, risks and open decisions.
-- **Next gate:** ChatGPT evaluates Claude's review and presents the proposed dataset and Phase 1 scope to the Product Owner where confirmation is required. No implementation until scope and dataset are settled and an explicit implementation assignment is issued.
+### Stage 3 — User + VS Code + ChatGPT
+User assembles returned code locally and runs tests. ChatGPT performs the return/alignment checkpoint, reviews against the approved assignment, resolves issues, integrates approved changes into main and updates documentation.
 
-### Review topics
+**Zero-overlap:** ChatGPT owns documentation. Claude owns only named code files during an active implementation assignment. No simultaneous file editing.
 
-Claude is asked to assess:
-1. Spreadsheet intake and source profiling.
-2. Preservation and traceability of raw inputs.
-3. Duplicate detection, classification and treatment.
-4. Missing-value classification and treatment.
-5. Data-type and format standardisation.
-6. Date, numeric and currency handling.
-7. Whitespace and text normalisation.
-8. Invalid and inconsistent records.
-9. Transformation documentation and assumptions.
-10. Before-and-after record-count and value reconciliation.
-11. QA, repeatability and exception handling.
-12. Reusable workbook and output design.
-13. Appropriate roles for Excel, Power Query, SQL Server and Python/pandas.
-14. Synthetic or appropriately licensed public dataset characteristics suitable for a realistic first demonstration.
+## 5. Return/alignment checkpoint
 
-Claude must not invent a real client dataset, imply client provenance, use confidential data, choose a dataset on behalf of the Product Owner as an approved decision, or modify repository files during this review.
+Whenever the user returns after Claude work or local assembly, ChatGPT first inspects latest main, relevant repository changes and supplied files/results; compares implementation to the approved assignment; reviews actual test evidence; identifies omissions and blockers; and confirms alignment or explains remaining issues.
 
-## 6. Pending decisions and approvals
+ChatGPT must not claim visibility into uncommitted local changes or test results that were not supplied or observed. No next implementation assignment is issued before this checkpoint.
 
-- Phase 1 dataset/source selection.
-- Phase 1 business scenario, dataset grain and scope.
-- Specific cleaning and transformation rules where business meaning is ambiguous.
-- Final Phase 1 deliverable and acceptance criteria.
+## 6. Documentation authority
 
-These will be proposed after the specialist review. Existing high-level toolkit and six-service scope are already approved and should not be reopened without a material reason.
+- `README.md`: public project overview and concise current status.
+- `docs/PROJECT-FOUNDATION.md`: accepted business purpose, requirements, scope and architecture.
+- `docs/PROJECT-ROADMAP.md`: phases, sequencing and exit criteria.
+- `docs/DECISIONS.md`: material approved decisions and change history.
+- `docs/AI-COLLABORATION.md`: permanent FNEOS role, ownership and workflow rules.
+- `docs/AI-HANDOFF.md`: this living coordination record.
+- `docs/PHASE-1-SPECIFICATION.md`: bounded Phase 1 requirements and acceptance criteria.
 
-## 7. File ownership and active changes
+ChatGPT maintains these documents. Claude may read them but may not modify them without explicit Product Owner-approved ownership transfer.
 
-- **ChatGPT:** Maintains this handoff and collaboration documentation on `main`.
-- **Claude:** No file ownership; review-only assignment.
-- **Product Owner:** Final authority on material decisions and acceptance.
+## 7. Phase 1 boundary
 
-No simultaneous editing is authorised. If Claude receives a later implementation or documentation assignment, create a dedicated `claude/<work-item-slug>` branch from the latest appropriate main commit, record assigned/excluded files and ownership here, and require a PR to main. Claude must not push to or merge into main.
+The next engineering direction is Spreadsheet Cleaning & Restructuring using a bounded synthetic-data demonstration. Before implementation:
+1. Complete and review the Phase 1 specification.
+2. Establish dataset characteristics, business scenario, grain and selection criteria.
+3. Define cleaning rules, exception treatment and reconciliation expectations.
+4. Confirm appropriate tools and exact deliverables.
+5. Obtain Product Owner approval of unresolved business choices and the task specification.
+6. Issue a separate, explicitly scoped Claude implementation assignment.
 
-## 8. Review and integration record
+No dataset has been selected or approved by this handoff. No code files are currently assigned to Claude.
 
-No Claude findings have been received yet. No specialist review has been completed, no Claude branch or PR exists, and no implementation has been integrated.
+## 8. Superseded records and assignments
 
-When findings arrive, record:
-- Summary and recommendation.
-- Findings accepted, modified or rejected by ChatGPT, with reasons.
-- Product Owner decisions required and their outcomes.
-- Any resulting implementation assignment and ownership.
-- Verification evidence and integration commit, if applicable.
+The 26 November AI collaboration model, branch/pull-request workflow and `PH1-REVIEW-001` handoff assignment are superseded and inactive. They remain in Git history for traceability; they are not current instructions.
 
-## 9. Next authorised action
+## 9. Current ownership and assignment register
 
-1. Send the PH1-REVIEW-001 assignment to Claude for review only.
-2. Receive and assess Claude's written findings.
-3. Prepare a dataset recommendation and bounded Phase 1 scope.
-4. Obtain Product Owner confirmation where required.
-5. Only then issue a separately authorised implementation assignment under the branch and PR controls in `docs/AI-COLLABORATION.md`.
+- **Product Owner:** final decisions, local assembly, execution and acceptance.
+- **ChatGPT:** all documentation, architecture, assignment preparation, return/alignment review and main integration.
+- **Claude:** no active assignment and no file ownership at reset.
+- **Current Claude assignment:** NONE.
+- **Active branches or PRs authorised by this handoff:** NONE.
 
-**Current gate: Awaiting Claude's review. Phase 1 implementation remains NOT STARTED.**
+## 10. Next authorised action
+
+Complete and review the bounded Phase 1 specification under ChatGPT documentation ownership, then present any unresolved dataset/business decisions and the specification for Product Owner approval.
+
+**Implementation remains NOT STARTED. No Claude code assignment is active.**
