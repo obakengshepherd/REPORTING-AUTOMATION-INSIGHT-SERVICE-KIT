@@ -52,7 +52,7 @@ Every service should define its business requirement, scope, source data, transf
 - `docs/QUALITY-ASSURANCE.md` — verification and acceptance controls
 - `docs/PROJECT-ROADMAP.md` — phased implementation, FNEOS gates and exit criteria
 - `docs/DECISIONS.md` — material approved decisions and change control
-- `docs/PHASE-1-SPECIFICATION.md` — Phase 1 design direction and final implementation approval gate
+- `docs/PHASE-1-SPECIFICATION.md` — approved Phase 1 requirements, source schema, controls and acceptance criteria
 - `docs/AI-COLLABORATION.md` — FNEOS roles, file ownership and three-stage workflow
 - `docs/AI-HANDOFF.md` — current status, assignments, ownership and next authorised action
 
@@ -62,4 +62,4 @@ Use synthetic or appropriately licensed public datasets for demonstrations. Do n
 
 ## Current boundary
 
-The Product Owner accepted the foundation documentation on 25 November 2026. Phase 0 is complete. The Product Owner has approved Claude's Phase 1 architecture-review recommendations, and the detailed Phase 1 specification is being refined. Phase 1 implementation remains NOT STARTED and is not authorised until the Product Owner explicitly approves the completed task specification. No Claude code assignment is active.
+The Product Owner accepted the foundation on 25 November 2026 and approved the Phase 1 implementation scope on 27 November 2026. Claude's RASK-ARCH-REV-001 review is closed with recommendations adopted. RASK-P1-I1 is the active engineering increment. Implementation, verification and Product Owner acceptance remain separate.
