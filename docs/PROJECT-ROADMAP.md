@@ -49,10 +49,11 @@ Approved design direction:
 - File-level artefact contracts; service-specific layout; no shared framework or library.
 
 Approved implementation scope:
-- Finalise exact field schema and data dictionary.
-- Define control-total formulas, currency and rounding rules.
-- Define seeded-issue manifest and expected outcomes.
-- Confirm exact repository paths and file-level task scope.
+- Fixed 11-field order-line schema and OrderLineID candidate key.
+- Synthetic 1,500-record generator with fixed seed 20261127 and seeded issue manifest.
+- ZAR-only Decimal financial calculation with per-line ROUND_HALF_UP.
+- Explicit seeded value, duplicate, ambiguity and structural cases.
+- Exact repository paths and bounded nine-file Claude assignment in docs/AI-HANDOFF.md.
 
 **Engineering increment:** RASK-P1-I1 — deterministic synthetic workbook generator, seeded issue manifest, intake/cleaning pipeline, traceability/reconciliation artefacts, XLSX/CSV outputs and automated tests. Claude performs one handoff review and proceeds under the same assignment unless a genuine blocker exists.
 
