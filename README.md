@@ -4,7 +4,7 @@
 
 ## Project status
 
-**Foundation accepted — 25 November 2026. Phase 1 implementation scope approved — 27 November 2026. RASK-P1-I1 engineering assignment active; implementation in progress.**
+**Foundation accepted — 25 November 2026. Phase 1 implementation scope approved — 27 November 2026. RASK-P1-I1 handoff finalised; implementation NOT STARTED pending Claude dispatch.**
 
 ## Purpose
 
@@ -62,4 +62,4 @@ Use synthetic or appropriately licensed public datasets for demonstrations. Do n
 
 ## Current boundary
 
-The Product Owner accepted the foundation on 25 November 2026 and approved the Phase 1 implementation scope on 27 November 2026. Claude's RASK-ARCH-REV-001 review is closed with recommendations adopted. RASK-P1-I1 is the active engineering increment. Implementation, verification and Product Owner acceptance remain separate.
+The Product Owner accepted the foundation on 25 November 2026 and approved the Phase 1 implementation scope on 27 November 2026. Claude's RASK-ARCH-REV-001 review is closed with recommendations adopted. RASK-P1-I1 is the approved first engineering increment; its bounded handoff is prepared and committed. Implementation has not started because Claude has not yet received the assignment. Verification and Product Owner acceptance remain separate.
