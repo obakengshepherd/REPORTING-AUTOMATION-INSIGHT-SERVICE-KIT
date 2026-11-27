@@ -1,7 +1,7 @@
 # Phase 1 Specification — Spreadsheet Cleaning & Restructuring
 
-**Specification status:** DRAFT — READY FOR PRODUCT OWNER FINAL SPECIFICATION APPROVAL  
-**Implementation status:** NOT STARTED — NOT AUTHORISED  
+**Specification status:** APPROVED FOR IMPLEMENTATION — 27 NOVEMBER 2026  
+**Implementation status:** IN PROGRESS — RASK-P1-I1 ASSIGNED  
 **Phase:** 1  
 **Specification owner:** ChatGPT — Primary AI  
 **Decision authority:** Product Owner  
@@ -14,7 +14,7 @@ Deliver a bounded, reproducible service demonstration that receives a deliberate
 
 The demonstration must make its work explainable. It must not silently invent business values, erase exceptions or imply that a synthetic scenario represents a real client engagement.
 
-This document incorporates the Product Owner-approved recommendations from Claude's read-only architecture review. It is a substantially refined task specification, but remains subject to the final approval gate in Section 15. Approval of the architecture review does not itself authorise code implementation.
+This document incorporates the Product Owner-approved recommendations from Claude's read-only architecture review and the Product Owner's engineering activation directive of 27 November 2026. The Phase 1 implementation scope is approved.
 
 ## 2. Business scenario
 
@@ -35,23 +35,49 @@ The scenario is illustrative and synthetic. It does not represent a real client,
 
 The generator and manifest must be deterministic: the same approved seed and parameters should reproduce the same source dataset and seeded issue set.
 
-### 3.2 Proposed fields
+### 3.2 Final source schema
 
-The exact schema is finalised in the implementation design, but should include fields sufficient for order-line identification, order/customer references, order date, product/category, quantity, unit price, discount where applicable, currency and line amount.
+One row represents one order line.
 
-Use synthetic identifiers and fictional categories. Do not generate real personal data or use actual names, email addresses, telephone numbers, addresses or account identifiers.
+| Field | Type / rules |
+|---|---|
+| `OrderLineID` | Required string, `OL-` plus six digits; candidate business key |
+| `OrderID` | Required synthetic string, `ORD-` plus six digits |
+| `OrderDate` | Required ISO date in clean output; ambiguous source dates quarantined |
+| `CustomerID` | Nullable synthetic string; preserve missing value and report WARNING |
+| `ProductID` | Required synthetic string, `PRD-` plus four digits |
+| `ProductCategory` | Nullable string; trim/canonicalise known labels only; ambiguous/unknown labels quarantined |
+| `Quantity` | Required positive integer; invalid/non-positive values rejected |
+| `UnitPrice` | Required non-negative decimal, 2 fractional digits; missing/unparseable values quarantined |
+| `DiscountRate` | Required decimal fraction, inclusive range 0–1; out-of-range values rejected |
+| `CurrencyCode` | ZAR only; other currencies rejected |
+| `LineAmount` | Derived/check field, 2 fractional digits |
+
+Use fictional identifiers/categories only. Do not generate real names, contact details, addresses or account identifiers. Dates are synthetic and confined to 2025–2026.
+
+**Canonical financial rule:** `LineAmount = Quantity × UnitPrice × (1 − DiscountRate)`, calculated with `Decimal` and rounded per line to two decimal places using `ROUND_HALF_UP`. Currency is ZAR. No tax, shipping or foreign-exchange calculations are in scope.
 
 ### 3.3 Seeded issue manifest
 
-A machine-readable or otherwise structured seeded-issue manifest must be defined and committed alongside the generator before cleaning logic is implemented. It must describe the intended issue class, affected source row/field or structural location, expected detection and expected treatment. This gives the tests a known ground truth.
+The machine-readable manifest is `manifests/seeded-issues.json`. Use fixed generator seed `20261127`. It must encode stable business identifiers or structural anchors, issue class, source field/location, expected detection, severity and expected disposition.
 
-Include:
-- Value-level issues: whitespace/casing, inconsistent category labels, mixed date/number representations, missing values and invalid values.
-- Duplicate cases: exact duplicate rows and near-duplicate candidates.
-- Structural issues: at least two distinct spreadsheet artefacts, such as repeated header rows, title/blank rows, embedded subtotal/total rows, merged-cell effects or inconsistent header placement.
-- At least one ambiguity case that must be flagged for human review rather than automatically corrected.
+| Seed | Target | Condition | Expected treatment |
+|---|---|---|---|
+| 001 | OL-000101 | Category whitespace | CORRECTED |
+| 002 | OL-000202 | Category case variation | CORRECTED |
+| 003 | OL-000303 | Missing CustomerID | RETAINED_AS_IS; WARNING; preserve null |
+| 004 | OL-000404 | Quantity zero | REJECTED |
+| 005 | OL-000505 | Missing UnitPrice | QUARANTINED |
+| 006 | OL-000606 | DiscountRate greater than 1 | REJECTED |
+| 007 | OL-000707 compared with OL-000706 | Near-duplicate pattern, distinct line IDs | Keep both; WARNING; no merge |
+| 008 | OL-000808 | Incorrect source LineAmount | CORRECTED using canonical formula |
+| 009 | OL-001010 | Ambiguous date `03/04/2026` | QUARANTINED; do not guess locale |
+| 010 | Duplicate occurrence of OL-000909 | Exact duplicate | REMOVED_AS_DUPLICATE; retained counterpart recorded |
+| 011 | Workbook opening | Merged title row and blank separator before headers | EXCLUDED_NON_RECORD |
+| 012 | After source record 500 | Repeated header row | EXCLUDED_NON_RECORD |
+| 013 | After source record 1,000 | Subtotal row | EXCLUDED_NON_RECORD |
 
-Do not seed or automatically repair issues whose business meaning cannot be justified.
+Generate 1,500 base order-line records in one worksheet named `Orders`. Place the title and blank row before headers on row 3. Insert repeated-header and subtotal artefacts at the stated record anchors. Tests must assert manifest cases against independent expected outcomes; do not derive expected results from the cleaner itself.
 
 ## 4. Scope
 
@@ -88,7 +114,7 @@ Do not seed or automatically repair issues whose business meaning cannot be just
 
 Excel remains the delivery format, not a second transformation engine. Power Query is deferred for this phase to avoid implementing the same workflow twice. The broader project toolkit approved in the foundation remains unchanged; this is a phase-specific tool selection.
 
-Dependencies must remain minimal and justified. Exact supported versions and setup instructions are recorded in the implementation handoff.
+Pinned baseline: Python 3.11 or 3.12, pandas 2.2.3, openpyxl 3.1.5 and pytest 8.3.4. Record actual versions in run metadata. No additional dependencies without demonstrated need.
 
 ## 6. Workflow
 
@@ -166,17 +192,14 @@ The artefacts are file-level contracts for this workflow. Do not create a genera
 
 ## 11. Outputs and proposed repository layout
 
-Final paths are to be confirmed in the implementation task assignment. Use a service-specific layout, provisionally:
+Approved service-specific layout:
 
 - `services/spreadsheet-cleaning/README.md`
 - `services/spreadsheet-cleaning/src/`
 - `services/spreadsheet-cleaning/tests/`
-- `services/spreadsheet-cleaning/data/source/`
-- `services/spreadsheet-cleaning/data/output/`
-- `services/spreadsheet-cleaning/reports/`
 - `services/spreadsheet-cleaning/manifests/`
 
-Do not commit generated run outputs unnecessarily; define repository retention and ignore rules during implementation design. The public repository may contain the synthetic generator, manifest and a small illustrative fixture, but must not accumulate redundant generated files.
+Runtime inputs/outputs and reports are created on demand and supplied through CLI paths. Do not commit generated workbooks/reports. Commit the generator, manifest, source code and tests. Tests use temporary directories.
 
 Expected run outputs:
 - Cleaned XLSX workbook.
@@ -198,7 +221,7 @@ Every source row/candidate must be accounted for exactly once in the final dispo
 - Relevant order-line quantities and monetary control totals reconcile according to the explicitly defined treatment of exclusions, corrections, duplicates and quarantined records.
 - Any legitimate difference is itemised by disposition and reason.
 
-The implementation must define the control-total calculation and rounding/currency rules before build. Do not compare unlike currencies or silently aggregate across currencies.
+Approved controls: ZAR only; Decimal arithmetic; per-line ROUND_HALF_UP to two decimals; no FX, tax or shipping. Report physical worksheet rows separately from business source candidates; counts by mutually exclusive disposition; clean output count = RETAINED_AS_IS + CORRECTED; computable quantity and canonical amount totals by disposition; clean-output totals; exact duplicate counts and retained-counterpart references. A monetary control is computable only when quantity, unit price and discount are valid. Never coerce invalid/null values to zero. The disposition partition and computable source quantity/amount totals must balance exactly. Clean-output totals are a subset and need not equal full source totals when records are rejected, quarantined, excluded or removed as duplicates.
 
 ## 13. Verification and acceptance criteria
 
@@ -237,12 +260,6 @@ Implementation, verification and Product Owner acceptance remain separate lifecy
 | Ambiguous business meaning | Quarantine/flag for human review |
 | Scope expansion | No second transformation engine, shared framework, GUI or infrastructure |
 
-## 15. Final Product Owner approval gate
+## 15. Implementation approval
 
-The Product Owner has approved the recommendations from RASK-ARCH-REV-001 and the design direction recorded here. Before implementation, ChatGPT must present this completed specification, final field/control-total definitions and exact file-level task scope for explicit approval.
-
-Until that final task approval:
-- Phase 1 remains NOT STARTED.
-- No implementation is authorised.
-- No Claude code assignment is active.
-- No code files are assigned to Claude.
+The Product Owner's engineering activation directive of 27 November 2026 explicitly approves this completed Phase 1 implementation scope. The specialist architecture review is closed; its recommendations are adopted. The approved first increment is RASK-P1-I1: deterministic synthetic workbook generation, seeded manifest, intake/cleaning pipeline, traceable artefacts, reconciliation, XLSX/CSV outputs and automated tests. Claude performs one independent review of the handoff and proceeds under the same assignment if no genuine blocker exists. Non-blocking observations do not pause work. Implementation is IN PROGRESS once the assignment is issued; verification and Product Owner acceptance remain separate.
