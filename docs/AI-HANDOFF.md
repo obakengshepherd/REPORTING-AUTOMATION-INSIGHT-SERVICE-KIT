@@ -21,7 +21,7 @@ The reset preserves valid requirements and historical commits. It supersedes con
 
 Repository: https://github.com/obakengshepherd/REPORTING-AUTOMATION-INSIGHT-SERVICE-KIT  
 Default branch: `main`  
-Latest main inspected for RASK-P1-I1 handoff: `7980b2df315e32783d34672a04b46e3ab14c2f7c`
+Latest main inspected for RASK-P1-I1 handoff: `ba8bfa5ffdf66f5d5ff1dbfd9f05adaf28410c0d`
 
 ## 3. Current project status
 
