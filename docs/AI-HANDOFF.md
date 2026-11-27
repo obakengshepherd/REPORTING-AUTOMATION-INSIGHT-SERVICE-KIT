@@ -26,10 +26,10 @@ Latest main inspected for RASK-P1-I1 handoff: `7980b2df315e32783d34672a04b46e3ab
 ## 3. Current project status
 
 - **Phase 0 — Foundation and repository setup:** ACCEPTED, 25 November 2026.
-- **Phase 1 — Spreadsheet Cleaning & Restructuring:** implementation IN PROGRESS; scope approved 27 November 2026.
-- **Substantial implementation:** NOT YET RETURNED; RASK-P1-I1 is assigned.
-- **Current activity:** Claude one-time handoff review followed by implementation under the same assignment.
-- **Current Claude assignment:** RASK-P1-I1 — ACTIVE.
+- **Phase 1 — Spreadsheet Cleaning & Restructuring:** implementation NOT STARTED; scope approved 27 November 2026.
+- **Substantial implementation:** NOT STARTED; no Claude files have been returned.
+- **Current activity:** final bounded handoff prepared; awaiting dispatch to Claude.
+- **Current Claude assignment:** RASK-P1-I1 — PREPARED, NOT YET DISPATCHED.
 
 The six approved service categories remain progressively sequenced; no simultaneous implementation is authorised.
 
@@ -137,11 +137,11 @@ The Product Owner's 27 November 2026 engineering activation directive approves t
 - **Product Owner:** final authority, local assembly, execution and acceptance.
 - **ChatGPT:** architecture, all documentation, assignment, return/alignment review and main integration.
 - **Claude:** RASK-P1-I1 only; owns only the nine code files listed above until complete return.
-- **Active Claude assignment:** RASK-P1-I1.
+- **Claude assignment:** RASK-P1-I1 — prepared; dispatch pending.
 - **Active branches or PRs authorised:** NONE.
 
 ## 10. Next authorised action
 
-Claude performs the one-time handoff review and proceeds with RASK-P1-I1 unless a genuine blocker exists. Product Owner assembles and tests returned files in VS Code. ChatGPT then performs one return/alignment checkpoint before integration.
+Next action: Product Owner sends the prepared RASK-P1-I1 assignment to Claude. Claude performs one handoff review and proceeds with implementation unless a genuine blocker exists. Product Owner assembles and tests returned files in VS Code. ChatGPT then performs one return/alignment checkpoint before integration.
 
-**Implementation is IN PROGRESS by assignment. It is not yet IMPLEMENTED, VERIFIED or ACCEPTED.**
+**Implementation remains NOT STARTED until Claude receives the assignment and returns implementation files. It is not IMPLEMENTED, VERIFIED or ACCEPTED.**
