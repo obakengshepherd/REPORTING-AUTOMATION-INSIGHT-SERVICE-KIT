@@ -145,27 +145,3 @@ The Product Owner's 27 November 2026 engineering activation directive approves t
 Claude performs the one-time handoff review and proceeds with RASK-P1-I1 unless a genuine blocker exists. Product Owner assembles and tests returned files in VS Code. ChatGPT then performs one return/alignment checkpoint before integration.
 
 **Implementation is IN PROGRESS by assignment. It is not yet IMPLEMENTED, VERIFIED or ACCEPTED.**
-
-
-Before implementation approval, ChatGPT must finalise:
-1. Exact dataset field schema and data dictionary.
-2. Currency, rounding and control-total formulas.
-3. Seeded-issue manifest structure and expected test outcomes.
-4. Exact repository paths and bounded code-file assignment.
-5. Test matrix and final acceptance evidence.
-
-The revised specification remains a draft until the Product Owner explicitly approves it for implementation.
-
-## 8. Current ownership and assignment register
-
-- **Product Owner:** final decisions, local assembly, execution and acceptance.
-- **ChatGPT:** all documentation, architecture, assignment preparation, return/alignment review and main integration.
-- **Claude:** no active assignment and no file ownership.
-- **Current Claude assignment:** NONE.
-- **Active branches or PRs authorised by this handoff:** NONE.
-
-## 9. Next authorised action
-
-Complete the remaining Phase 1 specification details and present the complete bounded task for explicit Product Owner implementation approval.
-
-**Implementation remains NOT STARTED. No Claude code assignment is active.**
