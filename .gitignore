@@ -1,0 +1,36 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local/private datasets and client material
+private-data/
+client-data/
+local-inputs/
+local-outputs/
+
+# Office temporary/lock files
+~$*.xlsx
+~$*.xls
+~$*.pptx
+~$*.docx
+
+# Operating system and editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
