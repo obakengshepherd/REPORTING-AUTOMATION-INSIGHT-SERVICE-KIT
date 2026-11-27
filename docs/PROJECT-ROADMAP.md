@@ -2,7 +2,7 @@
 
 **Foundation approved:** 25 November 2026  
 **Governance standard:** FNEOS v1.0 — adopted 27 November 2026  
-**Current status:** Phase 0 foundation accepted. Phase 1 specification refinement in progress; implementation not started.
+**Current status:** Phase 0 foundation accepted. Phase 1 implementation scope approved; RASK-P1-I1 active.
 
 ## FNEOS delivery gates
 
@@ -36,9 +36,9 @@ Material changes to approved requirements, scope, architecture, stack, security,
 
 ## Phase 1 — Spreadsheet Cleaning & Restructuring
 
-**Status:** SPECIFICATION REFINEMENT IN PROGRESS; IMPLEMENTATION NOT STARTED.  
+**Status:** IMPLEMENTATION IN PROGRESS — increment RASK-P1-I1 assigned.  
 **Architecture review:** `RASK-ARCH-REV-001` recommendations approved by Product Owner.  
-**Specification:** `docs/PHASE-1-SPECIFICATION.md` — refined draft; final implementation approval pending.
+**Specification:** `docs/PHASE-1-SPECIFICATION.md` — approved for implementation, 27 November 2026.
 
 Approved design direction:
 - Python/pandas processing with pytest.
@@ -48,13 +48,13 @@ Approved design direction:
 - Explicit severity/disposition taxonomy, source-row lineage and reconciliation.
 - File-level artefact contracts; service-specific layout; no shared framework or library.
 
-Remaining specification work:
+Approved implementation scope:
 - Finalise exact field schema and data dictionary.
 - Define control-total formulas, currency and rounding rules.
 - Define seeded-issue manifest and expected outcomes.
 - Confirm exact repository paths and file-level task scope.
 
-**Pre-build gate:** ChatGPT presents the completed specification and bounded task scope for explicit Product Owner approval. Only after approval may ChatGPT issue a separate Claude implementation assignment.
+**Engineering increment:** RASK-P1-I1 — deterministic synthetic workbook generator, seeded issue manifest, intake/cleaning pipeline, traceability/reconciliation artefacts, XLSX/CSV outputs and automated tests. Claude performs one handoff review and proceeds under the same assignment unless a genuine blocker exists.
 
 **Exit:** Reproducible workflow with documented transformations, traceable exceptions, complete source disposition, reconciled control totals, automated tests and Product Owner acceptance recorded separately.
 

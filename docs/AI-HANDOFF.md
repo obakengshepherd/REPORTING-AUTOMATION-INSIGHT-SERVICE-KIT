@@ -21,15 +21,15 @@ The reset preserves valid requirements and historical commits. It supersedes con
 
 Repository: https://github.com/obakengshepherd/REPORTING-AUTOMATION-INSIGHT-SERVICE-KIT  
 Default branch: `main`  
-Latest main inspected for this specification update: `c2ff7ea279c2e268d9f007b6e0b0bc8464aa4063`
+Latest main inspected before engineering activation: `f1af6384eef2bdd660b2c58b0b6a4cdbb40865d7`
 
 ## 3. Current project status
 
 - **Phase 0 — Foundation and repository setup:** ACCEPTED, 25 November 2026.
-- **Phase 1 — Spreadsheet Cleaning & Restructuring:** specification refinement IN PROGRESS; implementation NOT STARTED.
+- **Phase 1 — Spreadsheet Cleaning & Restructuring:** implementation IN PROGRESS; scope approved 27 November 2026.
 - **Substantial implementation:** NOT STARTED.
 - **Current activity:** incorporating Product Owner-approved architecture review recommendations into the Phase 1 specification and standards.
-- **Current Claude assignment:** NONE.
+- **Current Claude assignment:** RASK-P1-I1 — active.
 
 The six approved service categories remain progressively sequenced; no simultaneous implementation is authorised.
 
