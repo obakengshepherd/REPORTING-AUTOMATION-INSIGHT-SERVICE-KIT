@@ -36,7 +36,7 @@ Material changes to approved requirements, scope, architecture, stack, security,
 
 ## Phase 1 — Spreadsheet Cleaning & Restructuring
 
-**Status:** IMPLEMENTATION IN PROGRESS — increment RASK-P1-I1 assigned.  
+**Status:** IMPLEMENTATION NOT STARTED — RASK-P1-I1 approved and handoff prepared; awaiting Claude dispatch.  
 **Architecture review:** `RASK-ARCH-REV-001` recommendations approved by Product Owner.  
 **Specification:** `docs/PHASE-1-SPECIFICATION.md` — approved for implementation, 27 November 2026.
 
@@ -55,7 +55,7 @@ Approved implementation scope:
 - Explicit seeded value, duplicate, ambiguity and structural cases.
 - Exact repository paths and bounded nine-file Claude assignment in docs/AI-HANDOFF.md.
 
-**Engineering increment:** RASK-P1-I1 — deterministic synthetic workbook generator, seeded issue manifest, intake/cleaning pipeline, traceability/reconciliation artefacts, XLSX/CSV outputs and automated tests. Claude performs one handoff review and proceeds under the same assignment unless a genuine blocker exists.
+**Next engineering increment:** RASK-P1-I1 — deterministic synthetic workbook generator, seeded issue manifest, intake/cleaning pipeline, traceability/reconciliation artefacts, XLSX/CSV outputs and automated tests. Handoff is prepared; after Claude receives it, Claude performs one review and proceeds under the same assignment unless a genuine blocker exists.
 
 **Exit:** Reproducible workflow with documented transformations, traceable exceptions, complete source disposition, reconciled control totals, automated tests and Product Owner acceptance recorded separately.
 
